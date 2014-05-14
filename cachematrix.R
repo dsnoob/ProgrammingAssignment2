@@ -43,13 +43,18 @@ makeCacheMatrix <- function(x = matrix()) {
 ## cache if it is available. If it is not available then
 ## solves to get the inverse and sets in the cache.
 ##
-## @param x - a matrix
+## @param x - a matrix to get the inverse.
 ##
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
 
   inv <- x$getInverse()
+
+  ## If the matrix is null, get the matrix calculate the inverse of it
+  ## and set the inverse of the matrix. The control essentially goes
+  ## into this condition if the inverse of the given matix is not found
+  ## in the cache.
 
   if(is.null(inv)) {
 
@@ -61,11 +66,12 @@ cacheSolve <- function(x, ...) {
 
     x$setInverse(inv)
 
-  } else {
+    return (inv)
+
+  }
 
     message("get inverse from the cache...")
 
-    return(inv)
-  }
+    return (inv)
 
 }
