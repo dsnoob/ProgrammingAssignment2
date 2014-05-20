@@ -10,4 +10,4 @@ s <- cacheSolve(m)
 print(s)
 s1 <- cacheSolve(m)
 print(s1)
-## 
+##
