@@ -6,6 +6,13 @@
 
 
 ##
+## Returns a list of functions for the given matrix.
+## The inverse of the given matrix is cached.
+## cacheSolve solves and will set the inverse when
+## and returns the matrix.
+##
+## @param x - a matrix to get the inverse.
+##
 
 makeCacheMatrix <- function(x = matrix()) {
 
